@@ -1,0 +1,17 @@
+<header class="flex align-items-center p-2 border-bottom-2 border-700">
+  <p-button (onClick)="sidebarVisible = true" icon="pi pi-bars"/>
+  <p class="text-5xl font-bold text-primary font-italic test">{{projectName}}</p>
+</header>
+<main>
+  <router-outlet />
+</main>
+<p-sidebar [(visible)]="sidebarVisible">
+  <ng-template pTemplate="header">
+      <p class="text-xl font-bold text-primary font-italic">{{projectName}}</p>
+  </ng-template>
+  <ng-template pTemplate="content">
+    <div class="card flex justify-content-center h-full">
+      <p-menu [model]="items" class="align-self-center"/>
+  </div>
+  </ng-template>
+</p-sidebar>

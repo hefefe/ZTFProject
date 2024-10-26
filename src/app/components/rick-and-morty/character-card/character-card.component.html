@@ -1,0 +1,23 @@
+<div class="card">
+  <p-dataView #dv [value]="characterData" emptyMessage="">
+      <ng-template pTemplate="list" let-characters>
+          <div class="grid grid-nogutter">
+              <div class="col-6" *ngFor="let character of characters">
+                  <div class="flex flex-row align-items-center p-4 gap-3 surface-100 m-3 border-round-md">
+                      <div class="md:w-10rem relative">
+                          <img class="block border-round w-full" [src]="character.image" [alt]="character.name" />
+                      </div>
+                          <div class="flex flex-column justify-content-between align-items-start gap-2">
+                              <div>
+                                  <div class="text-lg font-medium text-900 mt-2">{{ character.name }}</div>
+                                  <span class="font-medium text-secondary text-sm">{{ character.gender }}</span>
+                              </div>
+                          </div>
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+      <ng-template pTemplate="empty">
+      </ng-template>
+  </p-dataView>
+</div>

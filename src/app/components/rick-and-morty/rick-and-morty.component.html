@@ -1,1 +1,69 @@
-<p>rick-and-morty works!</p>
+<main class="w-full flex flex-column align-items-center justify-content-center mt-4">
+  <div class="formgrid grid col-5">
+    <div class="field col">
+      <label htmlFor="formOption">Select form</label>
+      <div class="card flex justify-content-start">
+        <p-dropdown [options]="formOptions" [(ngModel)]="selectedFormOption" optionLabel="name"
+          placeholder="Select a City" (onChange)="onChange($event)"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="formgrid grid col-5">
+    <div class="field col">
+      <label htmlFor="name">Name</label>
+      <input type="text" pInputText id="name" [(ngModel)]="requestData.name"
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" />
+    </div>
+  </div>
+
+  <div class="formgrid grid col-5" *ngIf="selectedFormOption.name == formOptions[0].name">
+    <div class="field col">
+      <label htmlFor="status">Status</label>
+      <div class="card flex justify-content-start">
+        <p-dropdown [options]="statuses" [(ngModel)]="requestData.status" optionLabel="name" optionValue="name"
+          placeholder="Select a status" />
+      </div>
+    </div>
+    <div class="field col">
+      <label htmlFor="gender">Gender</label>
+      <div class="card flex justify-content-start">
+        <p-dropdown [options]="genders" [(ngModel)]="requestData.gender" optionLabel="name" optionValue="name"
+          placeholder="Select a Gender"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="formgrid grid col-5" *ngIf="selectedFormOption.name == formOptions[0].name">
+    <div class="field col">
+      <label htmlFor="species">Species</label>
+      <input type="text" pInputText id="species" [(ngModel)]="requestData.species"
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" />
+    </div>
+  </div>
+
+  <div class="formgrid grid col-5">
+    <div class="field col">
+      <label htmlFor="type">Type</label>
+      <input type="text" pInputText id="type" [(ngModel)]="requestData.type"
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" />
+    </div>
+  </div>
+
+  <div class="formgrid grid col-5" *ngIf="selectedFormOption.name == formOptions[1].name">
+    <div class="field col">
+      <label htmlFor="dimension">Dimension</label>
+      <input type="text" pInputText id="dimension" [(ngModel)]="requestData.dimension"
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" />
+    </div>
+  </div>
+    <div class="formgrid grid col-5" >
+    <div class="field col">
+      <p-button size="large" pRipple class="p-button-solid" label="Search" (click)="getApiData()"></p-button>
+    </div>
+  </div>
+</main>
+<div class="flex flex-column align-items-center justify-content-center w-full">
+  <app-character-card [characterData]="characterData" class="col-8"></app-character-card>
+</div>
+

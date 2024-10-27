@@ -8,6 +8,7 @@ import { IRequestData } from './form-request-interface';
 export class RickAndMortyService {
 
   apiURL: string = 'https://rickandmortyapi.com/api/character/';
+  locationApiUrl: string = 'https://rickandmortyapi.com/api/location';
 
   constructor(private http: HttpClient) { }
 
@@ -23,5 +24,15 @@ export class RickAndMortyService {
 
   sendApiRequest(url:string){
     return this.http.get(url);
+  }
+
+  getFilteredLocation(requestData: IRequestData){
+    let params= new HttpParams();
+    for(const key in requestData){
+      if((requestData as any)[key]){
+        params = params.append(key, (requestData as any)[key])
+      }
+    }
+    return this.http.get(this.locationApiUrl, {params});
   }
 }

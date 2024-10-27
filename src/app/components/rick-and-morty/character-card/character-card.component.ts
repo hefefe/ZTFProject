@@ -14,4 +14,5 @@ export class CharacterCardComponent {
 
   @Input() characterData!: IExtendedCharData[];
 
+
 }

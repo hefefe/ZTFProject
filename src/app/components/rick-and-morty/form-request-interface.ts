@@ -42,7 +42,7 @@ export interface ILocationData {
 
 export interface ILocationResponse {
   info?: IInfo;
-  result?: ILocationData[];
+  results?: ILocationData[];
 }
 
 export interface IEpisodeData {

@@ -1,0 +1,12 @@
+<div class="flex flex-column align-items-center justify-content-center w-full m-5" *ngIf="characterData.length > 0">
+  <div *ngIf="characterData">
+    <p-button size="large" pRipple class="p-button-solid" (click)="getCharacterPage(CharacterPreviousURL)" icon="pi pi-angle-left" [disabled]="!CharacterPreviousURL"></p-button>
+    <p-button size="large" pRipple class="p-button-solid" (click)="getCharacterPage(CharacterNextURL)" icon="pi pi-angle-right" [disabled]="!CharacterNextURL"></p-button>
+  </div>
+  <app-character-card
+  [characterData]="characterData"
+  class="col-8"></app-character-card>
+</div>
+<div class="flex flex-column align-items-center justify-content-center w-full m-5" *ngIf="characterData.length == 0">
+  <p>Empty list of characters. Search again.</p>
+</div>

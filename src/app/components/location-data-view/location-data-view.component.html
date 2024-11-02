@@ -1,0 +1,25 @@
+<div class="flex flex-column align-items-center justify-content-center w-full m-5" *ngIf="(locationData | json) != ({} | json)">
+  <div class="mb-5">
+    <p-button size="large" pRipple class="p-button-solid" (click)="getLocationPage(locationData.info?.prev!)" icon="pi pi-angle-left" [disabled]="!locationData.info?.prev"></p-button>
+    <p-button size="large" pRipple class="p-button-solid" (click)="getLocationPage(locationData.info?.next!)" icon="pi pi-angle-right" [disabled]="!locationData.info?.next"></p-button>
+  </div>
+  <p-table [value]="locationData.results!" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Dimension</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-location>
+        <tr>
+            <td>{{ location.name }}</td>
+            <td>{{ location.type }}</td>
+            <td>{{ location.dimension }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>
+<div class="flex flex-column align-items-center justify-content-center w-full m-5" *ngIf="(locationData | json) == ({} | json)">
+  <p>Empty list of locations. Search again.</p>
+</div>

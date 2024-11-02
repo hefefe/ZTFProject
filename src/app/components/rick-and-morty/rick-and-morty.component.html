@@ -63,36 +63,4 @@
     </div>
   </div>
 </main>
-<div class="flex flex-column align-items-center justify-content-center w-full" *ngIf="selectedFormOption.name == formOptions[0].name">
-  <div *ngIf="characterData">
-    <p-button size="large" pRipple class="p-button-solid" (click)="getCharacterPage(CharacterPreviousURL)" icon="pi pi-angle-left" [disabled]="!CharacterPreviousURL"></p-button>
-    <p-button size="large" pRipple class="p-button-solid" (click)="getCharacterPage(CharacterNextURL)" icon="pi pi-angle-right" [disabled]="!CharacterNextURL"></p-button>
-  </div>
-  <app-character-card
-  [characterData]="characterData"
-  class="col-8"></app-character-card>
-</div>
-<div class="flex flex-column align-items-center justify-content-center w-full" *ngIf="selectedFormOption.name == formOptions[1].name">
-  <div *ngIf="LocationData">
-    <p-button size="large" pRipple class="p-button-solid" (click)="getLocationPage(LocationData.info?.prev!)" icon="pi pi-angle-left" [disabled]="!LocationData.info?.prev"></p-button>
-    <p-button size="large" pRipple class="p-button-solid" (click)="getLocationPage(LocationData.info?.next!)" icon="pi pi-angle-right" [disabled]="!LocationData.info?.next"></p-button>
-  </div>
-  <p-table [value]="LocationData.results!" [tableStyle]="{ 'min-width': '50rem' }">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Dimension</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-location>
-        <tr>
-            <td>{{ location.name }}</td>
-            <td>{{ location.type }}</td>
-            <td>{{ location.dimension }}</td>
-        </tr>
-    </ng-template>
-</p-table>
-
-</div>
 

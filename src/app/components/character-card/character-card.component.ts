@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IExtendedCharData } from '../form-request-interface';
+import { IExtendedCharData } from '../rick-and-morty/form-request-interface';
 import { DataViewModule } from 'primeng/dataview';
 import { NgFor } from '@angular/common';
 

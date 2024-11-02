@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RandomImageService } from './random-image.service';
+import { SharedService } from './shared.service';
 
-describe('RandomImageService', () => {
-  let service: RandomImageService;
+describe('SharedServiceService', () => {
+  let service: SharedService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(RandomImageService);
+    service = TestBed.inject(SharedService);
   });
 
   it('should be created', () => {

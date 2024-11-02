@@ -22,8 +22,8 @@ export class HomeComponent {
     ngOnInit() {
         this.items = [
             { label: 'API Form', icon: 'pi pi-align-justify', command: () => {this.router.navigate(['/rickandmorty']);}},
-            { label: 'Game', icon: 'pi pi-box', command: () => {this.router.navigate(['/game']);}},
-            { label: 'Random Image', icon: 'pi pi-palette', command: () => {this.router.navigate(['/randomimage']);}}
+            { label: 'Character Data', icon: 'pi pi-users', command: () => {this.router.navigate(['/chardata']);}},
+            { label: 'Location Data', icon: 'pi pi-globe', command: () => {this.router.navigate(['/locationdata']);}}
         ];
     }
 
